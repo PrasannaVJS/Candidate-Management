@@ -1,0 +1,16 @@
+nav {
+    background-color: black;
+    height: 50px;
+}
+
+
+nav ul li {
+    list-style-type: none;
+    width : 150 px;
+    float:left;
+}
+
+li :hover{
+    background-color: yellow;
+    color:green;
+}

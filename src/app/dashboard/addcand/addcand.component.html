@@ -1,0 +1,81 @@
+
+<div class="container">
+    <h1 id="headingform">Grads Enrollment Form</h1>
+    <form #userForm="ngForm"> 
+
+        <div class="form-group">
+            <label >First Name</label>
+            <input type="text" required #fname="ngModel" [class.is-invalid]="fname.invalid && fname.touched" class="form-control" name="fname" [(ngModel)]="userModel.fname">
+        <small class="text-danger" [class.d-none]="fname.valid || fname.untouched">First Name is required</small>
+        </div>
+
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" required #lname="ngModel" [class.is-invalid]="lname.invalid && lname.touched" class="form-control" name="lname" [(ngModel)]="userModel.lname">
+            <small class="text-danger" [class.d-none]="lname.valid || lname.untouched">Last Name is required</small>
+        </div>
+
+        <div class="form-group">
+            <label>Email ID</label>
+            <input type="text" required pattern="[^ @]*@[^ @]+\.[a-z]{2,}$"  #emailid="ngModel" [class.is-invalid]="emailid.invalid &&  emailid.touched" class="form-control" name="emailid" [(ngModel)]="userModel.emailid">
+            <small class="text-danger" [class.d-none]="emailid.valid || emailid.untouched">EmailID is required</small>
+        </div>
+
+        <div class="form-group">
+            <label>Location</label>
+            <select required #locationpref="ngModel" [class.is-invalid]="locationpref.invalid && locationpref.touched" class="custom-select" [(ngModel)]="userModel.locationpref" name="locationpref">
+                <option *ngFor="let l of Loc">{{l}}</option>
+            </select>
+            <small class="text-danger" [class.d-none]="locationpref.valid || locationpref.untouched">Please specify the location</small>
+        </div>
+
+        <div class="form-group">
+            <label>Feedback</label>
+            <input type="text" required #fb="ngModel" [class.is-invalid]="fb.invalid && fb.touched" class="form-control" name="fb" [(ngModel)]="userModel.fb">
+            <small class="text-danger" [class.d-none]="fb.valid || fb.untouched">Feedback is required</small>
+        </div>
+
+        <div class="form-group">
+            <label>Job Description</label>
+            <select required #rol="ngModel" [class.is-invalid]="rol.invalid && rol.touched" class="custom-select" name="rol" [(ngModel)]="userModel.rol">
+                <option *ngFor="let j of Role">{{j}}</option>
+            </select>
+            <small class="text-danger" [class.d-none]="rol.valid || rol.untouched">Please specify the Role</small>
+        </div>
+
+        <div class="form-group">
+            <label>Contact Number</label>
+            <input type="tel" required #contno="ngModel" pattern="^\d{10}$" [class.is-invalid]="contno.invalid && contno.touched" class="form-control" name="contno" [(ngModel)]="userModel.contno" >
+            <!--<small class="text-danger" [class.d-none]="contno.valid || contno.untouched">Contact number is required and must be of 10 digits</small>-->
+            <div *ngIf="contno.errors && ( contno.invalid || contno.touched )">
+                <small class="text-danger" *ngIf="contno.errors.required">Contact number is required</small>
+                <small class="text-danger" *ngIf="contno.errors.pattern">Contact number must be of 10 digits</small>        
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Skills</label><br>
+            <input type="checkbox" name="cpp" [(ngModel)]="userModel.cpp">
+            <label>C++</label><br>
+            <input type="checkbox"  name="java" [(ngModel)]="userModel.java">
+            <label>Java</label><br>
+            <input type="checkbox"  name="pytho" [(ngModel)]="userModel.pytho">
+            <label>Python</label><br>
+            <input type="checkbox"  name="ang" [(ngModel)]="userModel.ang">
+            <label>Angular</label><br>
+            <input type="checkbox"  name="spr" [(ngModel)]="userModel.spr">
+            <label>Spring</label><br>
+        </div>
+
+        <div class="col text-center">
+        <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit" (click)="enrollNow()">Submit Details</button>
+        </div><br>
+        {{errorMsg}}<br>
+        <!--<div *ngIf="!hasError">
+        {{ userModel | json }}
+    </div>-->
+    </form>
+
+</div>
+
+

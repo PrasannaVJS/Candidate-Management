@@ -1,0 +1,62 @@
+
+
+<div class="wrapper">
+    <div class="sidebar">
+        <ul >
+            <li><button (click)="showhometab()">Home</button></li>
+            <li><button (click)="showotherstab()">Opportunity Management</button></li>
+            <li><button (click)="showcandidtab()">Candidate Management</button></li>
+            <li><button (click)="showotherstab()">Course Management</button></li>
+            <li><button (click)="showotherstab()">Assessment</button></li>
+            <li><button (click)="showotherstab()">Onboarding Portal</button></li>
+        </ul>
+    </div>
+    <div class="main_content">
+        <div *ngIf="hometab==true">
+        <div class="header"> <b>Welcome to AU Management Portal!!!</b></div>
+        <div class="info">
+            <img src="../../assets/Images/AU_logo.JPG" alt="Accolite University">
+        </div>
+        </div>
+        <div *ngIf="otherstab==true">
+            <p>Non Functional</p>
+        </div>
+        <div *ngIf="candidtab==true">
+            <nav>
+                <ul>
+                    <li><button (click)="searchcand()">Search</button></li>
+                    <li><button (click)="addcand()">Add</button></li>
+                    <li><button>View</button></li>
+                    <li><button>Skills</button></li>
+                    <li><button>Trends</button></li>
+                </ul>
+                </nav>
+                
+                <br>
+                <br>
+
+                <div *ngIf="addcandbool==false" class="container">
+                
+                
+                
+                    
+                    <label>Search: </label><br>
+                    <input type="text">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <select>
+                        <option *ngFor="let o of options">{{o}}</option>
+                    </select>
+                    <br>
+                    <button type="button" class="btn btn-primary">Search Candidate</button>
+                </div>   
+
+                <div *ngIf="addcandbool==true && candidtab==true">
+                    <app-addcand></app-addcand>
+                </div>    
+
+        </div>
+    </div>
+</div>
+
+
+
