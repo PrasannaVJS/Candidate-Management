@@ -13,6 +13,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CandidatetabComponent } from './candidatetab/candidatetab.component';
 import { OthertabsComponent } from './othertabs/othertabs.component';
 import { AddcandComponent } from './dashboard/addcand/addcand.component';
+import { ViewcandComponent } from './dashboard/viewcand/viewcand.component';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { UpdatecandComponent } from './dashboard/viewcand/updatecand/updatecand.component';
+import { SearchComponent } from './dashboard/search/search.component';
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
@@ -30,7 +34,10 @@ export function provideConfig() {
     DashboardComponent,
     CandidatetabComponent,
     OthertabsComponent,
-    AddcandComponent
+    AddcandComponent,
+    ViewcandComponent,
+    UpdatecandComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,10 @@ export function provideConfig() {
     ReactiveFormsModule,
     SocialLoginModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger'
+    })
   ],
   providers: [
     UserserviceService,

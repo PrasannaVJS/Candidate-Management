@@ -16,6 +16,7 @@ div.sidebar {
     height: 100%;
     padding:30px;
     left: 0px;
+    margin-top:-180px;
 }
 
 div.wrapper {
@@ -39,6 +40,7 @@ div.wrapper {
 .wrapper .main_content{
 width: 100%;
 margin-left:200px;
+margin-top:-80px;
 }
 
 .wrapper .main_content .header {
@@ -54,7 +56,6 @@ div.info {
 }
 
 nav {
-    background-color: black;
     height: 50px;
 }
 

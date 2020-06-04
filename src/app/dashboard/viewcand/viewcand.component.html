@@ -1,0 +1,95 @@
+<br>
+<div  style="float:right;margin-right:200px;">
+    <button class="btn btn-primary" type="button" (click)="ngOnInit()">UPDATE</button>
+</div>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Feedback</th>
+                <th>Job Description</th>
+                <th>Contact</th>
+                <th>Skills</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let grad of grads">
+            <tr>
+                <td>{{grad.id}}</td>
+                <td>{{grad.firstname}} {{grad.lastname}}</td>
+                <td>{{grad.emailID}}</td>
+                <td>{{grad.location}}</td>
+                <td>{{grad.feedback}}</td>
+                <td>{{grad.jobdescrip}}</td>
+                <td>{{grad.contactno}}</td>
+                <td><p *ngIf="grad.cpp==true">C++</p>
+                    <p *ngIf="grad.java==true">Java</p>
+                    <p *ngIf="grad.python==true">Python</p>
+                    <p *ngIf="grad.angular==true">Angular</p>
+                    <p *ngIf="grad.spring==true">Spring</p>
+                </td>
+                <td><button type="button" class="btn btn-primary" (click)="gradupdate(grad.id)">UPDATE</button>
+                   <br> <button type="button" class="btn btn-danger" mwlConfirmationPopover [popoverTitle]="popoverTitle" [popoverMessage]="popoverMessage" placement ="left" (confirm)="deleteGrad(grad.id)" (cancel)="cancelClicked=true">DELETE</button></td></tr>
+                    <br><div *ngIf="viewbool==true  && set==grad.id">
+                        <div class="container">
+                        <form #userForm="ngForm"> 
+                        
+                            <div class="form-group">
+                                <label>Location</label>
+                                <select required #location="ngModel" [class.is-invalid]="location.invalid && location.touched" class="custom-select" [(ngModel)]="grad.location" name="location">
+                                    <option *ngFor="let l of Loc">{{l}}</option>
+                                </select>
+                                <small class="text-danger" [class.d-none]="location.valid || location.untouched">Please specify the location</small>
+                            </div>
+
+                        <div class="form-group">
+                            <label>Feedback</label>
+                            <input type="text" required #feedback="ngModel" [class.is-invalid]="feedback.invalid && feedback.touched" class="form-control" name="feedback" [(ngModel)]="grad.feedback">
+                            <small class="text-danger" [class.d-none]="feedback.valid || feedback.untouched">Feedback is required</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Job Description</label>
+                            <select required #jobdescrip="ngModel" [class.is-invalid]="jobdescrip.invalid && jobdescrip.touched" class="custom-select" name="jobdescrip" [(ngModel)]="grad.jobdescrip">
+                                <option *ngFor="let j of Role">{{j}}</option>
+                            </select>
+                            <small class="text-danger" [class.d-none]="jobdescrip.valid || jobdescrip.untouched">Please specify the Role</small>
+                        </div>
+                
+                        <div class="form-group">
+                            <label>Contact Number</label>
+                            <input type="tel" required #contactno="ngModel" pattern="^\d{10}$" [class.is-invalid]="contactno.invalid && contactno.touched" class="form-control" name="contactno" [(ngModel)]="grad.contactno" >
+                            <!--<small class="text-danger" [class.d-none]="contno.valid || contno.untouched">Contact number is required and must be of 10 digits</small>-->
+                            <div *ngIf="contactno.errors && ( contactno.invalid || contactno.touched )">
+                                <small class="text-danger" *ngIf="contactno.errors.required">Contact number is required</small>
+                                <small class="text-danger" *ngIf="contactno.errors.pattern">Contact number must be of 10 digits</small>        
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Skills</label><br>
+                            <input type="checkbox" name="cpp" [(ngModel)]="grad.cpp">
+                            <label>C++</label><br>
+                            <input type="checkbox"  name="java" [(ngModel)]="grad.java">
+                            <label>Java</label><br>
+                            <input type="checkbox"  name="python" [(ngModel)]="grad.python">
+                            <label>Python</label><br>
+                            <input type="checkbox"  name="angular" [(ngModel)]="grad.angular">
+                            <label>Angular</label><br>
+                            <input type="checkbox"  name="spring" [(ngModel)]="grad.spring">
+                            <label>Spring</label><br>
+                        </div>
+                        <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit" (click)="updatedetails(grad.id,grad)">Submit Details</button>
+                    </form></div>
+                    </div> 
+        </tbody>
+    </table>
+</div>

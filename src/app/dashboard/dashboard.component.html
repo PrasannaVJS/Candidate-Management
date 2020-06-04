@@ -26,7 +26,7 @@
                 <ul>
                     <li><button (click)="searchcand()">Search</button></li>
                     <li><button (click)="addcand()">Add</button></li>
-                    <li><button>View</button></li>
+                    <li><button (click)="viewcand()">View</button></li>
                     <li><button>Skills</button></li>
                     <li><button>Trends</button></li>
                 </ul>
@@ -35,24 +35,18 @@
                 <br>
                 <br>
 
-                <div *ngIf="addcandbool==false" class="container">
+                <div *ngIf="searchbool==true && candidtab==true" class="container">
                 
-                
-                
-                    
-                    <label>Search: </label><br>
-                    <input type="text">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <select>
-                        <option *ngFor="let o of options">{{o}}</option>
-                    </select>
-                    <br>
-                    <button type="button" class="btn btn-primary">Search Candidate</button>
+                    <app-search></app-search>
                 </div>   
 
                 <div *ngIf="addcandbool==true && candidtab==true">
                     <app-addcand></app-addcand>
                 </div>    
+
+                <div *ngIf="viewbool==true && candidtab==true">
+                    <app-viewcand></app-viewcand>
+                </div>
 
         </div>
     </div>

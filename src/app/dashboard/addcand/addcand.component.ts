@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../user';
 import { UserserviceService } from '../../userservice.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -10,25 +11,30 @@ import { UserserviceService } from '../../userservice.service';
 })
 export class AddcandComponent implements OnInit {
 
-  Loc=["Bangalore","Mumbai","Chennai","Hyderabad","Gurugram"];
-  Role=["Intern","Employee","Manager","HR"];
-  Skills=["C++","Java","Python","Angular","Spring"];
-  hasError=true;
-  errorMsg="";
-
-
-  constructor(private serv: UserserviceService) { }
-
-  ngOnInit(): void {
-  }
-
-  userModel = new User('','','','','','',1234567890,false,false,false,false,false);
-
+    Loc=["Bangalore","Mumbai","Chennai","Hyderabad","Gurugram"];
+    Role=["Intern","Employee","Manager","HR"];
+    Skills=["C++","Java","Python","Angular","Spring"];
+    hasError=true;
+    errorMsg="";
+    returnMsg:any;
+    returndisp:boolean;
+    constructor(private serv: UserserviceService) { }
+  
+    ngOnInit(): void {
+      this.returndisp=false;
+  
+    }
+  userModel =new User('','','','','','',1234567890,false,false,false,false,false);
+  
   public enrollNow(){
    this.errorCheck();
     if (this.hasError==false){
+      console.log(this.userModel);
       this.errorMsg="";
-    this.serv.doEnroll(this.userModel);
+    let resp=this.serv.doEnroll(this.userModel);
+    resp.subscribe((data)=> this.returnMsg=data);
+    this.returndisp=true;
+    //this.errorMsg="Details entered successfully"
     }
     else {
       this.errorMsg="Enter correct Contact Number";
@@ -37,7 +43,7 @@ export class AddcandComponent implements OnInit {
   
   
   public errorCheck(){
-    if (this.userModel.contno==1234567890){
+    if (this.userModel.contactno==1234567890){
       this.hasError=true;
     }
     else{
@@ -45,6 +51,12 @@ export class AddcandComponent implements OnInit {
     }
   }
   
+  reset(candForm : NgForm){
+  candForm.resetForm();
+  this.userModel.contactno=1234567890;
+  this.returndisp=false;
+  }
+  
+  }
+  
 
-
-}

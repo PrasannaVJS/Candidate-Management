@@ -1,0 +1,91 @@
+<div class="container">
+<label>Search: </label><br>
+<input type="text" name="searchcontent" [(ngModel)]="searchcontent">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <select name="searchtype" [(ngModel)]="searchtype" >
+                        <option *ngFor="let o of options">{{o}}</option>
+                    </select>
+                    <br><br>
+                    <button type="button" class="btn btn-primary" (click)="searchGrad(searchtype,searchcontent)">Search Candidate</button>
+                    </div>
+
+                    <div class="container">
+                        <table class="table table-striped custab">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Location</th>
+                                    <th>Feedback</th>
+                                    <th>Job Description</th>
+                                    <th>Contact</th>
+                                    <th>Skills</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                
+                                <tr *ngFor="let grad of grads">
+                                    <td>{{grad.id}}</td>
+                                    <td>{{grad.firstname}} {{grad.lastname}}</td>
+                                    <td>{{grad.emailID}}</td>
+                                    <td>{{grad.location}}</td>
+                                    <td>{{grad.feedback}}</td>
+                                    <td>{{grad.jobdescrip}}</td>
+                                    <td>{{grad.contactno}}</td>
+                                    <td><p *ngIf="grad.cpp==true">C++</p>
+                                        <p *ngIf="grad.java==true">Java</p>
+                                        <p *ngIf="grad.python==true">Python</p>
+                                        <p *ngIf="grad.angular==true">Angular</p>
+                                        <p *ngIf="grad.spring==true">Spring</p>
+                                    </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+
+
+                               <!--  <div class="container-fluid" *ngIf="searchtype=='By ID'">
+                                    <table class="table table-striped custab">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                                <th>Location</th>
+                                                <th>Feedback</th>
+                                                <th>Job Description</th>
+                                                <th>Contact</th>
+                                                <th>C++</th>
+                                                <th>Java</th>
+                                                <th>Python</th>
+                                                <th>Angular</th>
+                                                <th>Spring</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                    
+                                        <tr>
+                                            <td>{{grad.id}}</td>
+                                            <td>{{grad.firstname}}</td>
+                                            <td>{{grad.lastname}}</td>
+                                            <td>{{grad.emailID}}</td>
+                                            <td>{{grad.location}}</td>
+                                            <td>{{grad.feedback}}</td>
+                                            <td>{{grad.jobdescrip}}</td>
+                                            <td>{{grad.contactno}}</td>
+                                            <td>{{grad.cpp}}</td>
+                                            <td>{{grad.java}}</td>
+                                            <td>{{grad.python}}</td>
+                                            <td>{{grad.angular}}</td>
+                                            <td>{{grad.spring}}</td>
+                                            </tr>
+                                       
+                                        </tbody>
+                                        </table> -->
+
+
+                         
+
