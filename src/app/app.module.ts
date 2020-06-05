@@ -17,6 +17,9 @@ import { ViewcandComponent } from './dashboard/viewcand/viewcand.component';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { UpdatecandComponent } from './dashboard/viewcand/updatecand/updatecand.component';
 import { SearchComponent } from './dashboard/search/search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TrendsComponent } from './dashboard/trends/trends.component';
+import { NgbModule,NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap'
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
@@ -37,7 +40,8 @@ export function provideConfig() {
     AddcandComponent,
     ViewcandComponent,
     UpdatecandComponent,
-    SearchComponent
+    SearchComponent,
+    TrendsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,10 @@ export function provideConfig() {
     HttpClientModule,
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger'
-    })
+    }),
+    BrowserAnimationsModule,
+    NgbModule,
+    NgbPaginationModule
   ],
   providers: [
     UserserviceService,

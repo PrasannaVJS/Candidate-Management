@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserserviceService } from 'src/app/userservice.service';
 import { Router } from '@angular/router';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-viewcand',
@@ -19,12 +20,21 @@ export class ViewcandComponent implements OnInit {
   grad:any;
   set:number;
   id:number;
+  page:number;
+  pageSize:number;
+  //totalrecords:number;
   constructor(private service: UserserviceService,private router: Router) { }
 
   ngOnInit(): void {
     this.viewbool=false;
+    this.page=1;
+    this.pageSize=5;
     let resp=this.service.getAllUsers();
-    resp.subscribe((data)=> this.grads=data);
+    resp.subscribe((data)=> {
+      this.grads=data
+      console.log(data)
+  });
+    
   }
 
   deleteGrad(id:number){

@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   addcandbool:boolean;
   searchbool:boolean;
   viewbool:boolean;
+  trend:boolean;
   constructor(private router:Router) { }
 
   ngOnInit(): void {
@@ -26,6 +27,7 @@ export class DashboardComponent implements OnInit {
     this.addcandbool=false;
     this.searchbool=false;
     this.viewbool=false;
+    this.trend=false;
   }
 
   options=["By ID","By Name","By Location"];
@@ -50,26 +52,37 @@ export class DashboardComponent implements OnInit {
     this.otherstab=false;
     this.addcandbool=false;
     this.viewbool=false;
+    this.trend=false;
     this.candidtab=true;
     this.searchbool=true;
   }
 
   addcand(){
+    this.trend=false;
     this.searchbool=false;
     this.viewbool=false;
     this.addcandbool=true;
   }
 
   searchcand(){
+    this.trend=false;
     this.addcandbool=false;
     this.viewbool=false;
     this.searchbool=true;
   }
   
   viewcand(){
+    this.trend=false;
     this.searchbool=false;
     this.addcandbool=false;
     this.viewbool=true;
   }
   
+  viewtrend(){
+    this.searchbool=false;
+    this.addcandbool=false;
+    this.viewbool=false;
+    this.trend=true;
+  }
+
 }

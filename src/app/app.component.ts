@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Chart } from 'chart.js';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

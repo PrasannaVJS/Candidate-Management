@@ -1,0 +1,67 @@
+<div *ngIf="check==true">
+<div *ngFor="let ch of chartdata">
+    <div *ngIf="ch.loc=='Bangalore'">
+        {{true ? charta(ch.count): "h"}}
+    </div>
+    <div *ngIf="ch.loc=='Mumbai'">
+        {{true? chartb(ch.count): "e"}}
+    </div>
+    <div *ngIf="ch.loc=='Chennai'">
+        {{true ? chartc(ch.count): "l"}}
+    </div>
+    <div *ngIf="ch.loc=='Hyderabad'">
+        {{true ? chartd(ch.count): "l"}}
+    </div>
+    <div *ngIf="ch.loc=='Gurugram'">
+        {{true ? charte(ch.count): "o"}}
+    </div>
+</div>
+</div>
+
+<div *ngIf="check2==true">
+    <div *ngFor="let ch2 of chartskilldata">
+        <div *ngIf="ch2.sname=='cpp'">
+            {{true ? chartf(ch2.gradcount): "h"}}
+        </div>
+        <div *ngIf="ch2.sname=='java'">
+            {{true? chartg(ch2.gradcount): "e"}}
+        </div>
+        <div *ngIf="ch2.sname=='python'">
+            {{true ? charth(ch2.gradcount): "l"}}
+        </div>
+        <div *ngIf="ch2.sname=='angular'">
+            {{true ? charti(ch2.gradcount): "l"}}
+        </div>
+        <div *ngIf="ch2.sname=='spring'">
+            {{true ? chartj(ch2.gradcount): "o"}}
+        </div>
+    </div>
+    </div>
+    
+
+
+
+
+
+
+<h1 style="text-align: center;">Number of Grads in various locations</h1>
+<div style="width:50%;align-items: center;margin-left:250px;">
+   
+    <canvas id="canvas"></canvas>
+    </div>
+
+    <br>
+    <br>
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    <h1 style="text-align: center;">Number of Grads with specific skills</h1>
+    <div style="width:50%;align-items: center;margin-left:250px;">
+   
+        <canvas id="canvas2"></canvas>
+        </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserserviceService } from 'src/app/userservice.service';
-
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-search',
@@ -9,6 +9,8 @@ import { UserserviceService } from 'src/app/userservice.service';
 })
 export class SearchComponent implements OnInit {
 
+  page:number;
+  pageSize:number;
   type:any;
   input:any;
   grads:any;
@@ -18,16 +20,20 @@ export class SearchComponent implements OnInit {
   idtable:boolean;
   gradtable:boolean;
   options=["By Role","By Location"];
+  
   constructor(private service:UserserviceService) { }
 
   ngOnInit(): void {
     this.idtable=false;
     this.gradtable=true;
+    this.page=1;
+    this.pageSize=5;
   }
 
   searchGrad(searchtype,searchcontent){
     console.log(searchtype);
     console.log(searchcontent);
+    this.page=1;
     if(this.searchtype=="By Location"){
       this.idtable=false;
       this.gradtable=true;

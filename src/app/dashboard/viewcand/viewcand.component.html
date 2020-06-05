@@ -1,9 +1,9 @@
-<br>
+<!-- <br>
 <div  style="float:right;margin-right:200px;">
     <button class="btn btn-primary" type="button" (click)="ngOnInit()">UPDATE</button>
 </div>
 <br>
-<br>
+<br> -->
 <br>
 
 <div class="container">
@@ -21,7 +21,7 @@
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let grad of grads">
+        <tbody  *ngFor="let grad of grads | slice: (page-1)*pageSize: (page-1)*pageSize+pageSize">
             <tr>
                 <td>{{grad.id}}</td>
                 <td>{{grad.firstname}} {{grad.lastname}}</td>
@@ -90,6 +90,11 @@
                         <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit" (click)="updatedetails(grad.id,grad)">Submit Details</button>
                     </form></div>
                     </div> 
+              
         </tbody>
     </table>
+    <ngb-pagination 
+            [(page)]="page"
+            [pageSize]="pageSize"
+            [collectionSize]="grads.length">  </ngb-pagination>
 </div>

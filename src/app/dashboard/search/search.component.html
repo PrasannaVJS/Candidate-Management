@@ -3,7 +3,8 @@
 <input type="text" name="searchcontent" [(ngModel)]="searchcontent">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <select name="searchtype" [(ngModel)]="searchtype" >
-                        <option *ngFor="let o of options">{{o}}</option>
+                        <option>By Role</option>
+                        <option>By Location</option>
                     </select>
                     <br><br>
                     <button type="button" class="btn btn-primary" (click)="searchGrad(searchtype,searchcontent)">Search Candidate</button>
@@ -24,9 +25,9 @@
                                 </tr>
                             </thead>
                             
-                            <tbody>
+                            <tbody *ngFor="let grad of grads | slice: (page-1)*pageSize: (page-1)*pageSize+pageSize">
                                 
-                                <tr *ngFor="let grad of grads">
+                                <tr>
                                     <td>{{grad.id}}</td>
                                     <td>{{grad.firstname}} {{grad.lastname}}</td>
                                     <td>{{grad.emailID}}</td>
@@ -43,7 +44,10 @@
                                     </tr>
                                 </tbody>
                                 </table>
-
+                                <ngb-pagination 
+                                [(page)]="page"
+                                [pageSize]="pageSize"
+                                [collectionSize]="grads.length">  </ngb-pagination></div>
 
                                <!--  <div class="container-fluid" *ngIf="searchtype=='By ID'">
                                     <table class="table table-striped custab">

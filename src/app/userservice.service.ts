@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,12 @@ public searchByJob(searchcontent){
   return this.http.get("http://localhost:8081/getcandidatebyjob/"+searchcontent);
 }
 
+public chartlocation(){
+  return this.http.get("http://localhost:8081/chartlocation");
+}
+
+public chartskill(){
+  return this.http.get("http://localhost:8081/chartskill");
+}
 
 }

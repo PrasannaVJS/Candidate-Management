@@ -16,7 +16,7 @@ div.sidebar {
     height: 100%;
     padding:30px;
     left: 0px;
-    margin-top:-180px;
+    margin-top:-159px;
 }
 
 div.wrapper {
@@ -57,6 +57,8 @@ div.info {
 
 nav {
     height: 50px;
+    width:100%;
+    align-items: center;
 }
 
 
@@ -71,3 +73,7 @@ nav ul li :hover{
     color:green;
 }
 
+#tab{
+    align-items:center;
+    font-size: 16px;
+}

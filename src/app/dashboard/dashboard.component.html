@@ -22,15 +22,20 @@
             <p>Non Functional</p>
         </div>
         <div *ngIf="candidtab==true">
-            <nav>
+           <!--  <nav>
                 <ul>
-                    <li><button (click)="searchcand()">Search</button></li>
-                    <li><button (click)="addcand()">Add</button></li>
-                    <li><button (click)="viewcand()">View</button></li>
-                    <li><button>Skills</button></li>
-                    <li><button>Trends</button></li>
+                    <li><button class="btn btn-primary" (click)="searchcand()">Search</button></li>
+                    <li><button class="btn btn-success" (click)="addcand()">Add</button></li>
+                    <li><button class="btn btn-secondary" (click)="viewcand()">View</button></li>
+                    <li><button class="btn btn-dark">Trends</button></li>
                 </ul>
-                </nav>
+                </nav> -->
+                <div class="container" #tab>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" (click)="searchcand()">SEARCH</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-success" (click)="addcand()">ADD</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-secondary" (click)="viewcand()">VIEW</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-dark" (click)="viewtrend()">TRENDS</button>
+                </div>
                 
                 <br>
                 <br>
@@ -46,6 +51,10 @@
 
                 <div *ngIf="viewbool==true && candidtab==true">
                     <app-viewcand></app-viewcand>
+                </div>
+
+                <div *ngIf="trend==true && candidtab==true">
+                    <app-trends></app-trends>
                 </div>
 
         </div>
