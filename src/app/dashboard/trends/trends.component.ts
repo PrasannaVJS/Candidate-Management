@@ -22,11 +22,12 @@ export class TrendsComponent implements OnInit {
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Locations';
+  xAxisLabel1 = 'Locations';
   showYAxisLabel = true;
-  yAxisLabel = 'Number of Candidates';
+  yAxisLabel1 = 'Number of Candidates';
   timeline = true;
-
+  xAxisLabel2 = 'Skills';
+  yAxisLabel2 = 'Number of Candidates';
   colorScheme = {
     domain: ['violet','blue','green','orange','yellow']
   };

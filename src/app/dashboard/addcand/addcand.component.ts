@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../user';
+import { User2 } from '../../user2';
 import { UserserviceService } from '../../userservice.service';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -18,23 +19,24 @@ export class AddcandComponent implements OnInit {
     errorMsg="";
     returnMsg:any;
     returndisp:boolean;
+    userModel:User2;
     constructor(private serv: UserserviceService) { }
   
     ngOnInit(): void {
       this.returndisp=false;
-  
+      this.userModel =new User2('','','','','','','','',1234567890,false,false,false,false,false);
     }
-  userModel =new User('','','','','','',1234567890,false,false,false,false,false);
   
-  public enrollNow(){
+  
+  public enrollNow(candForm:NgForm){
    this.errorCheck();
     if (this.hasError==false){
       console.log(this.userModel);
       this.errorMsg="";
     let resp=this.serv.doEnroll(this.userModel);
     resp.subscribe((data)=> this.returnMsg=data);
-    this.returndisp=true;
-    //this.errorMsg="Details entered successfully"
+     alert("Candidate Successfully added");
+this.reset(candForm);
     }
     else {
       this.errorMsg="Enter correct Contact Number";

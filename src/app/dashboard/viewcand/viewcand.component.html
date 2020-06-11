@@ -37,7 +37,7 @@
                     <p *ngIf="grad.spring==true">Spring</p>
                 </td>
                 <td><button type="button" class="btn btn-primary" (click)="gradupdate(grad.id)">UPDATE</button>
-                   <br> <button type="button" class="btn btn-danger" mwlConfirmationPopover [popoverTitle]="popoverTitle" [popoverMessage]="popoverMessage" placement ="left" (confirm)="deleteGrad(grad.id)" (cancel)="cancelClicked=true">DELETE</button></td></tr>
+                   <br> <button type="button" class="btn btn-danger" mwlConfirmationPopover [popoverTitle]="popoverTitle" [popoverMessage]="popoverMessage" placement ="left" (confirm)="deleteGrad(grad.id)" (cancel)="cancelClicked=true" id="deletebtn">DELETE</button></td></tr>
                     <br><div *ngIf="viewbool==true  && set==grad.id">
                         <div class="container">
                         <form #userForm="ngForm"> 

@@ -1,7 +1,7 @@
 
 <div class="container">
     <h1 id="headingform">Grads Enrollment Form</h1>
-    <form #userForm="ngForm"> 
+    <form #userForm="ngForm" id="form1"> 
 
         <div class="form-group">
             <label >First Name</label>
@@ -20,6 +20,20 @@
             <input type="text" required pattern="[^ @]*@[^ @]+\.[a-z]{2,}$"  #emailID="ngModel" [class.is-invalid]="emailID.invalid &&  emailID.touched" class="form-control" name="emailID" [(ngModel)]="userModel.emailID">
             <small class="text-danger" [class.d-none]="emailID.valid || emailID.untouched">EmailID is required</small>
         </div>
+
+        <div class="form-group">
+            <label >Institution</label>
+            <input type="text" required #institution="ngModel" [class.is-invalid]="institution.invalid && institution.touched" class="form-control" name="institution" [(ngModel)]="userModel.institution">
+        <small class="text-danger" [class.d-none]="institution.valid || institution.untouched">Institution Name is required</small>
+        </div>
+
+
+        <div class="form-group">
+            <label >Date of Joining</label>
+            <input type="date" required #joindate="ngModel" [class.is-invalid]="joindate.invalid && joindate.touched" class="form-control" name="joindate" [(ngModel)]="userModel.joindate">
+        <small class="text-danger" [class.d-none]="joindate.valid || joindate.untouched">Joining Date is required</small>
+        </div>
+
 
         <div class="form-group">
             <label>Location</label>
@@ -68,7 +82,7 @@
         </div>
 
         <div class="col text-center">
-        <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit" (click)="enrollNow()">Submit Details</button>
+        <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit" (click)="enrollNow(userForm)">Submit Details</button>
             <br><br>
             <button type="button" class="btn btn-secondary" (click)="reset(userForm)">Reset Details</button>
     </div><br>
