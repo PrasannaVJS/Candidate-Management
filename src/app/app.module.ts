@@ -20,6 +20,13 @@ import { SearchComponent } from './dashboard/search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TrendsComponent } from './dashboard/trends/trends.component';
 import { NgbModule,NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
+
+
+
+
+
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
@@ -55,7 +62,8 @@ export function provideConfig() {
     }),
     BrowserAnimationsModule,
     NgbModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    NgxChartsModule
   ],
   providers: [
     UserserviceService,

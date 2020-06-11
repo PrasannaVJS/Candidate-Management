@@ -37,11 +37,11 @@ public searchByJob(searchcontent){
   return this.http.get("http://localhost:8081/getcandidatebyjob/"+searchcontent);
 }
 
-public chartlocation(){
+public chartLocation(){
   return this.http.get("http://localhost:8081/chartlocation");
 }
 
-public chartskill(){
+public chartSkill(){
   return this.http.get("http://localhost:8081/chartskill");
 }
 
