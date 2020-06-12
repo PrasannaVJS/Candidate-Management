@@ -87,7 +87,8 @@
                             <input type="checkbox"  name="spring" [(ngModel)]="grad.spring">
                             <label>Spring</label><br>
                         </div>
-                        <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit" (click)="updatedetails(grad.id,grad)">Submit Details</button>
+                        <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit" (click)="updatedetails(grad.id,grad)">Submit Details</button><br><br>
+                        <button class="btn btn-danger" width="100" (click)="cancelMethod()" id="cancelbutton">Cancel</button><br><br>
                     </form></div>
                     </div> 
               

@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TrendsComponent } from './dashboard/trends/trends.component';
 import { NgbModule,NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 
@@ -48,7 +49,8 @@ export function provideConfig() {
     ViewcandComponent,
     UpdatecandComponent,
     SearchComponent,
-    TrendsComponent
+    TrendsComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,

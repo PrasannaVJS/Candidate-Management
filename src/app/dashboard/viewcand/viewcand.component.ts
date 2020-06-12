@@ -57,4 +57,13 @@ export class ViewcandComponent implements OnInit {
     resp.subscribe((data)=> this.grads=data);
   }
 
+  cancelMethod(){
+    this.viewbool=false;
+    let resp=this.service.getAllUsers();
+    resp.subscribe((data)=> {
+      this.grads=data
+      //console.log(data)
+  });
+  }
+
 }

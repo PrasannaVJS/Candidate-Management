@@ -1,3 +1,11 @@
 #deletebtn {
     margin-top:10px;
+    padding-left: 13px;
+    padding-right:13px;
+
+}
+
+#cancelbutton {
+    padding-left: 40px;
+    padding-right:40px;
 }

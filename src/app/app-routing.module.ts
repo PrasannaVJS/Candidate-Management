@@ -7,9 +7,13 @@ import { CandidatetabComponent } from './candidatetab/candidatetab.component';
 import { OthertabsComponent } from './othertabs/othertabs.component';
 import { UpdatecandComponent } from './dashboard/viewcand/updatecand/updatecand.component';
 import { ViewcandComponent } from './dashboard/viewcand/viewcand.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 const routes: Routes = [
+ // {path:'',redirectTo:'/AUhome',pathMatch:'full'},
+  {path:'AUhome',component:AppComponent},
+  {path:'aboutus',component: AboutusComponent},
   {path: 'cc',component : CreatecandidateComponent},
   {path:'home',component:DashboardComponent},
   {path:'candidate',component:CandidatetabComponent},

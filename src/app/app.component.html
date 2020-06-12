@@ -1,21 +1,40 @@
+<!-- 
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">  
     <title>Accolite University</title>
-  </head><body class="bg-light">
+  </head><body class="bg-light" >
+
+    <div class="container-fluid accolitetitle" *ngIf="loggedIn==false && about==false">
+      <a href="http://{{outputpath}}" target="_blank" style="color:blue;">Accolite-Home</a>
+      &nbsp;&nbsp;
+        <a (click)="aboutusmethod()" style="color:blue;">About Us</a>
+      <br><br><br><br><br><br>&nbsp;&nbsp;&nbsp;
+      <img src="../assets/Images/Accolite2.png" height="240" width="400" alt="Accolite Logo">
+
+
+    </div>
+
+    <div class="container-fluid accoliteimage" *ngIf="loggedIn==false && about==false">
+      <img src="../assets/Images/Accolite1.jpg" height="300" width="400" alt="Accolite Group Photo">
+    </div>
+
+
   <div class="container">
     <div class="signoutoption" *ngIf="loggedIn===true">
         <br>
         <button type="button" (click)="signOut()" class="btn btn-primary">Sign Out</button>
     </div>
+    
     <div class="row py-5 justify-content-center">
       <div class="col-md-8">
               
 
 
-        <div class="centeralign" *ngIf="loggedIn===false">
+        <div class="centeralign" *ngIf="loggedIn===false && about==false">
             <h1 class="text-center py-4">AU Management Portal</h1>  
             <br>
             <img src="../assets/Images/AU_logo.JPG" alt="Accolite University">
@@ -30,13 +49,16 @@
          <app-dashboard></app-dashboard>
         </div>
 
-        
+             <div *ngIf="about==true" id="aboutus">
+              &nbsp;&nbsp;<a (click)="homemethod()" style="color:blue;">Back</a><br>
+              
+               <app-aboutus></app-aboutus>
+             </div>
 </body>
 </html> 
 
 
-
-
   
 
-  
+   -->
+   <app-addcand></app-addcand>

@@ -1,7 +1,21 @@
 div.centeralign {
     text-align: center;
+    margin-top:-400px;
 }
 
 div.signoutoption {
     text-align: right;
+}
+
+.accoliteimage{
+    text-align: right;
+    margin-top:-250px;
+}
+
+.routerclass {
+    vertical-align: top;
+}
+
+#aboutus {
+    margin-top:-100px;
 }

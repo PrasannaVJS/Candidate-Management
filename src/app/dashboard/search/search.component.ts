@@ -17,15 +17,15 @@ export class SearchComponent implements OnInit {
   grad:any;
   searchtype:any;
   searchcontent:any;
-  idtable:boolean;
-  gradtable:boolean;
-  options=["By Role","By Location"];
+ // idtable:boolean;
+  //gradtable:boolean;
+  options=["By Role","By Location","By Skill"];
   
   constructor(private service:UserserviceService) { }
 
   ngOnInit(): void {
-    this.idtable=false;
-    this.gradtable=true;
+    //this.idtable=false;
+    //this.gradtable=true;
     this.page=1;
     this.pageSize=5;
   }
@@ -35,16 +35,20 @@ export class SearchComponent implements OnInit {
     console.log(searchcontent);
     this.page=1;
     if(this.searchtype=="By Location"){
-      this.idtable=false;
-      this.gradtable=true;
+      //this.idtable=false;
+      //this.gradtable=true;
       let resp=this.service.searchByLocation(searchcontent);
       resp.subscribe((data)=> this.grads=data);
     }
     else if(this.searchtype=="By Role"){
-      this.idtable=false;
-      this.gradtable=true;
+      //this.idtable=false;
+      //this.gradtable=true;
       let resp=this.service.searchByJob(searchcontent);
       resp.subscribe((data)=> this.grads=data);
+    }
+    else if(this.searchtype=="By Skill"){
+     let resp=this.service.searchBySkill(searchcontent);
+     resp.subscribe((data)=> this.grads=data);
     }
     /* else if(this.searchtype=="By ID"){
       this.gradtable=false;

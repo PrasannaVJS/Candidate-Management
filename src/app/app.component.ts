@@ -12,9 +12,12 @@ import { Chart } from 'chart.js';
 export class AppComponent implements OnInit {
   signinForm: FormGroup;
   user: SocialUser;
-  loggedIn: boolean;  
+  loggedIn: boolean; 
+  about:boolean; 
+  outputpath:String='www.accolite.com';
   constructor(private fb: FormBuilder, private authService: AuthService, private http:HttpClient, private router: Router) { }  
   ngOnInit() {
+    this.about=false;
     this.loggedIn=false;
     this.authService.authState.subscribe((user) => {
     this.user = user;
@@ -48,4 +51,15 @@ export class AppComponent implements OnInit {
     this.loggedIn=false;
     //this.router.navigate(['']);
   }
+
+  aboutusmethod(){
+    this.about=true;
+    console.log(this.about);   
+  }
+
+  homemethod(){
+    this.about=false;
+    console.log(this.about);
+  }
+
 }

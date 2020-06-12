@@ -37,6 +37,10 @@ public searchByJob(searchcontent){
   return this.http.get("http://localhost:8081/getcandidatebyjob/"+searchcontent);
 }
 
+public searchBySkill(searchcontent){
+  return this.http.get("http://localhost:8081/getcandidatebyskill/"+searchcontent);
+}
+
 public chartLocation(){
   return this.http.get("http://localhost:8081/chartlocation");
 }
@@ -44,5 +48,7 @@ public chartLocation(){
 public chartSkill(){
   return this.http.get("http://localhost:8081/chartskill");
 }
+
+
 
 }

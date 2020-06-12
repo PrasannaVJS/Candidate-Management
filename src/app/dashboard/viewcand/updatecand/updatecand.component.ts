@@ -49,4 +49,7 @@ export class UpdatecandComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/view']);
   }
+
+ 
+
 }
