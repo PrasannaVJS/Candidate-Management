@@ -9,34 +9,6 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-div.sidebar {
-    background: #4b4276;
-    position: fixed;
-    width: 200px;
-    height: 100%;
-    padding:30px;
-    left: 0px;
-    margin-top:-159px;
-}
-
-div.wrapper {
-    display: flex;
-    position: relative;
-    background: #f3f5f9;
-}
-
-.wrapper .sidebar ul li {
-    padding:15px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    border-top: 1px solid rgba(225,225,225,0.05);
-    color: #bdb8d7;
-    display:block;
-}
-
-.wrapper .sidebar ul li:hover{
-    background: #594f8d;
-}
-
 .main_content{
 width: 100%;
 margin-top:-80px;
@@ -54,25 +26,5 @@ div.info {
     text-align: center;
 }
 
-nav {
-    height: 50px;
-    width:100%;
-    align-items: center;
-}
 
 
-nav ul li {
-    list-style-type: none;
-    width : 150 px;
-    float:left;
-}
-
-nav ul li :hover{
-    background-color: yellow;
-    color:green;
-}
-
-#tab{
-    align-items:center;
-    font-size: 16px;
-}

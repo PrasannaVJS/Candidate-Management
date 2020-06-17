@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AddcandComponent } from './addcand/addcand.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -9,80 +8,8 @@ import { AddcandComponent } from './addcand/addcand.component';
 })
 export class DashboardComponent implements OnInit {
 
-  hometab: boolean;
-  otherstab:boolean;
-  candidtab:boolean;
-  ccoption:boolean;
-  addcandbool:boolean;
-  searchbool:boolean;
-  viewbool:boolean;
-  trend:boolean;
-  constructor(private router:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.hometab=true;
-    this.otherstab=false;
-    this.candidtab=false;
-    this.ccoption=false;
-    this.addcandbool=false;
-    this.searchbool=false;
-    this.viewbool=false;
-    this.trend=false;
   }
-
-  options=["By ID","By Name","By Location"];
-
-  showhometab(){
-    this.searchbool=false;
-    this.otherstab=false;
-    this.candidtab=false;
-    this.hometab=true;
-
-  }
-
-  showotherstab(){
-    this.searchbool=false;
-    this.hometab=false;
-    this.candidtab=false;
-    this.otherstab=true;
-  }
-
-  showcandidtab(){
-    this.hometab=false;
-    this.otherstab=false;
-    this.addcandbool=false;
-    this.viewbool=false;
-    this.trend=false;
-    this.candidtab=true;
-    this.searchbool=true;
-  }
-
-  addcand(){
-    this.trend=false;
-    this.searchbool=false;
-    this.viewbool=false;
-    this.addcandbool=true;
-  }
-
-  searchcand(){
-    this.trend=false;
-    this.addcandbool=false;
-    this.viewbool=false;
-    this.searchbool=true;
-  }
-  
-  viewcand(){
-    this.trend=false;
-    this.searchbool=false;
-    this.addcandbool=false;
-    this.viewbool=true;
-  }
-  
-  viewtrend(){
-    this.searchbool=false;
-    this.addcandbool=false;
-    this.viewbool=false;
-    this.trend=true;
-  }
-
 }

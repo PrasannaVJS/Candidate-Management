@@ -23,8 +23,6 @@ export class AppComponent implements OnInit {
     this.loggedIn=false;
     this.authService.authState.subscribe((user) => {
     this.user = user;
-      //this.loggedIn = (user != null);
-      //console.log(this.user);
     });
   }  
   op(){
@@ -54,7 +52,6 @@ export class AppComponent implements OnInit {
     this.authService.signOut();
     this.loggedIn=false;
     this.router.navigateByUrl('/AUhome');
-    //this.router.navigate(['']);
   }
 
   aboutusmethod(){

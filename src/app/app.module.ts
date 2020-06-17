@@ -5,12 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SocialLoginModule, AuthServiceConfig,GoogleLoginProvider } from 'angularx-social-login';
-import { CreatecandidateComponent } from './createcandidate/createcandidate.component';
 import { UserserviceService } from './userservice.service';
 import { HttpClientModule } from '@angular/common/http';
-import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CandidatetabComponent } from './candidatetab/candidatetab.component';
 import { OthertabsComponent } from './othertabs/othertabs.component';
 import { AddcandComponent } from './dashboard/addcand/addcand.component';
 import { ViewcandComponent } from './dashboard/viewcand/viewcand.component';
@@ -40,10 +37,7 @@ export function provideConfig() {
 @NgModule({
   declarations: [
     AppComponent,
-    CreatecandidateComponent,
-    SignupComponent,
     DashboardComponent,
-    CandidatetabComponent,
     OthertabsComponent,
     AddcandComponent,
     ViewcandComponent,
