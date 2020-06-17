@@ -1,4 +1,4 @@
-<!-- 
+
 
 <html lang="en">
   <head>
@@ -24,10 +24,7 @@
 
 
   <div class="container">
-    <div class="signoutoption" *ngIf="loggedIn===true">
-        <br>
-        <button type="button" (click)="signOut()" class="btn btn-primary">Sign Out</button>
-    </div>
+    
     
     <div class="row py-5 justify-content-center">
       <div class="col-md-8">
@@ -45,9 +42,57 @@
         </div> 
     </div>
 </div>       
-      <div *ngIf="loggedIn===true">
-         <app-dashboard></app-dashboard>
-        </div>
+
+
+<div class="sidebaralign2" *ngIf="loggedIn==true">
+<ng-sidebar-container>
+  <ng-sidebar class="sidebaralign" [opened]="opened">  <!--[closeOnClickOutside]="true"-->
+      <br>
+  <button class="btn btn-danger" id="closebtn" (click)="opened=!opened">Close<span class="glyphicon glyphicon-remove"></span></button><br>
+
+
+    <ul class="menu">
+      <li><a routerLink="/dashboard">Home</a></li>
+      <li><a routerLink="/others">Opportunity Management</a></li>
+      <li><a routerLink="/search">Candidate Management</a></li>
+      <li><a routerLink="/others">Course Management</a></li>
+      <li><a routerLink="/others">Assessment</a></li>
+      <li><a routerLink="/others">Onboarding Portal</a></li>
+  </ul>
+  </ng-sidebar>
+  <div ng-sidebar-content>
+  <button class="btn btn-success" style="margin-top:5px;margin-left: 5px;" (click)="opened=!opened" >
+    Menu
+  </button>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+<div class="container-fluid">
+  <div class="signoutoption" *ngIf="loggedIn===true">
+    <button type="button" (click)="signOut()" class="btn btn-danger">Sign Out</button>
+  </div></div>
+  
+        <div *ngIf="loggedIn===true">
+          <br>
+           <router-outlet></router-outlet>
+          </div>
+  
+
+  </div>
+  
+  
+  </ng-sidebar-container>
+</div>
+
+
+
+
+
+
 
              <div *ngIf="about==true" id="aboutus">
               &nbsp;&nbsp;<a (click)="homemethod()" style="color:blue;">Back</a><br>
@@ -60,5 +105,4 @@
 
   
 
-   -->
-   <app-addcand></app-addcand>
+   

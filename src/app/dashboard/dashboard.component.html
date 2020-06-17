@@ -1,6 +1,6 @@
+<br><br><br>
 
-
-<div class="wrapper">
+<!-- <div class="wrapper">
     <div class="sidebar">
         <ul >
             <li><button (click)="showhometab()">Home</button></li>
@@ -10,7 +10,7 @@
             <li><button (click)="showotherstab()">Assessment</button></li>
             <li><button (click)="showotherstab()">Onboarding Portal</button></li>
         </ul>
-    </div>
+    </div>-->
     <div class="main_content">
         <div *ngIf="hometab==true">
         <div class="header"> <b>Welcome to AU Management Portal!!!</b></div>
@@ -18,10 +18,10 @@
             <img src="../../assets/Images/AU_logo.JPG" alt="Accolite University">
         </div>
         </div>
-        <div *ngIf="otherstab==true">
-            <p>Non Functional</p>
-        </div>
-        <div *ngIf="candidtab==true">
+        
+    </div>
+
+
            <!--  <nav>
                 <ul>
                     <li><button class="btn btn-primary" (click)="searchcand()">Search</button></li>
@@ -30,7 +30,8 @@
                     <li><button class="btn btn-dark">Trends</button></li>
                 </ul>
                 </nav> -->
-                <div class="container" #tab>
+
+              <!--  <div class="container" #tab>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" (click)="searchcand()">SEARCH</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-success" (click)="addcand()">ADD</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-secondary" (click)="viewcand()">VIEW</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -39,6 +40,9 @@
                 
                 <br>
                 <br>
+<div *ngIf="otherstab==true">
+            <p>Non Functional</p>
+        </div> 
 
                 <div *ngIf="searchbool==true && candidtab==true" class="container">
                 
@@ -55,11 +59,10 @@
 
                 <div *ngIf="trend==true && candidtab==true">
                     <app-trends></app-trends>
-                </div>
+                </div>-->
 
-        </div>
-    </div>
-</div>
+  <!--   </div>
+</div> -->
 
 
 

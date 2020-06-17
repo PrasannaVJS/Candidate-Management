@@ -14,10 +14,12 @@ export class AppComponent implements OnInit {
   user: SocialUser;
   loggedIn: boolean; 
   about:boolean; 
+  opened:boolean;
   outputpath:String='www.accolite.com';
   constructor(private fb: FormBuilder, private authService: AuthService, private http:HttpClient, private router: Router) { }  
   ngOnInit() {
     this.about=false;
+    this.opened=false;
     this.loggedIn=false;
     this.authService.authState.subscribe((user) => {
     this.user = user;
@@ -25,7 +27,9 @@ export class AppComponent implements OnInit {
       //console.log(this.user);
     });
   }  
-
+  op(){
+    this.opened=true;
+  }
   signInWithGoogle() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
     .then(
@@ -36,7 +40,7 @@ export class AppComponent implements OnInit {
           {
             this.loggedIn=true;
             localStorage.setItem('token',response.idToken);
-            //this.router.navigateByUrl('/dashboard');
+            this.router.navigateByUrl('/dashboard');
           }
           else{
             this.loggedIn=false;
@@ -49,6 +53,7 @@ export class AppComponent implements OnInit {
   signOut(): void {
     this.authService.signOut();
     this.loggedIn=false;
+    this.router.navigateByUrl('/AUhome');
     //this.router.navigate(['']);
   }
 

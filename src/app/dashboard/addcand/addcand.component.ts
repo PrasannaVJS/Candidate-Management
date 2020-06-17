@@ -3,6 +3,7 @@ import { User } from '../../user';
 import { User2 } from '../../user2';
 import { UserserviceService } from '../../userservice.service';
 import { NgForm, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class AddcandComponent implements OnInit {
     returnMsg:any;
     returndisp:boolean;
     userModel:User2;
-    constructor(private serv: UserserviceService) { }
+    constructor(private serv: UserserviceService,private router:Router) { }
   
     ngOnInit(): void {
       this.returndisp=false;
@@ -58,6 +59,21 @@ this.reset(candForm);
   this.userModel.contactno=1234567890;
   this.returndisp=false;
   }
+
+  searchcand(){
+    this.router.navigateByUrl('/search');
+      }
+      addcand(){
+        this.router.navigateByUrl('/addcandidate');
+      }
+      viewcand(){
+        this.router.navigateByUrl('/viewcandidate');
+      }
+      viewtrend(){
+        this.router.navigateByUrl('/viewtrends');
+      }
+    
+
   
   }
   

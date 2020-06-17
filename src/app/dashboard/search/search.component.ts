@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserserviceService } from 'src/app/userservice.service';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -21,7 +22,7 @@ export class SearchComponent implements OnInit {
   //gradtable:boolean;
   options=["By Role","By Location","By Skill"];
   
-  constructor(private service:UserserviceService) { }
+  constructor(private service:UserserviceService,private router: Router) { }
 
   ngOnInit(): void {
     //this.idtable=false;
@@ -57,4 +58,19 @@ export class SearchComponent implements OnInit {
       resp.subscribe((data)=> this.grad=data);
     } */
   }
+
+  searchcand(){
+this.router.navigateByUrl('/search');
+  }
+  addcand(){
+    this.router.navigateByUrl('/addcandidate');
+  }
+  viewcand(){
+    this.router.navigateByUrl('/viewcandidate');
+  }
+  viewtrend(){
+    this.router.navigateByUrl('/viewtrends');
+  }
+
+
 }

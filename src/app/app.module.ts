@@ -22,7 +22,7 @@ import { TrendsComponent } from './dashboard/trends/trends.component';
 import { NgbModule,NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AboutusComponent } from './aboutus/aboutus.component';
-
+import { SidebarModule } from 'ng-sidebar';
 
 
 
@@ -65,7 +65,8 @@ export function provideConfig() {
     BrowserAnimationsModule,
     NgbModule,
     NgbPaginationModule,
-    NgxChartsModule
+    NgxChartsModule,
+    SidebarModule.forRoot()
   ],
   providers: [
     UserserviceService,

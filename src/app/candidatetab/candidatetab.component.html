@@ -1,27 +1,6 @@
-<nav>
-<ul>
-    <li><button>Search</button></li>
-    <li><button>Add</button></li>
-    <li><button>View</button></li>
-    <li><button>kills</button></li>
-    <li><button>Trends</button></li>
-</ul>
-</nav>
-
-<br>
-<br>
-<div class="container">
-
-
-
-    
-    <label>Search: </label><br>
-    <input type="text">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <select>
-        <option *ngFor="let o of options">{{o}}</option>
-    </select>
-    
+<div class="container" style="margin-top:-40px;">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" (click)="searchcand()">SEARCH</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-success" (click)="addcand()">ADD</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-secondary" (click)="viewcand()">VIEW</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-dark" (click)="viewtrend()">TRENDS</button>
 </div>
-
-

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-candidatetab',
@@ -7,11 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidatetabComponent implements OnInit {
 
-  searchtab:true;
-  constructor() { }
+ 
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    this.router.navigateByUrl('/search');
   }
+  searchcand(){
 
-  options=["By ID","By Name","By Location"];
+  }
+  addcand(){
+
+  }
+  viewcand(){
+
+  }
+  viewtrend(){
+
+  }
 }

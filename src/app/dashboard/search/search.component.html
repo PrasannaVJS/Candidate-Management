@@ -1,3 +1,12 @@
+<div class="container" style="margin-top:-40px;">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" (click)="searchcand()">SEARCH</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-warning" (click)="addcand()">ADD</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-secondary" (click)="viewcand()">VIEW</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-dark" (click)="viewtrend()">TRENDS</button>
+</div>
+<br>
+
+
 <div class="container">
 <label>Search: </label><br>
 <input type="text" name="searchcontent" [(ngModel)]="searchcontent">
@@ -45,7 +54,8 @@
                                     </tr>
                                 </tbody>
                                 </table>
-                                <ngb-pagination 
+                                <ngb-pagination
+                                class="d-flex justify-content-center" 
                                 [(page)]="page"
                                 [pageSize]="pageSize"
                                 [collectionSize]="grads.length">  </ngb-pagination></div>

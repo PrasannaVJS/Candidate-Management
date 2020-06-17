@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { UserserviceService } from 'src/app/userservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trends',
@@ -9,7 +10,7 @@ import { UserserviceService } from 'src/app/userservice.service';
 })
 export class TrendsComponent implements OnInit {
 
-  constructor(private service: UserserviceService){}
+  constructor(private service: UserserviceService,private router:Router){}
   view: any[] = [600, 400];
   trends:any;
   trends2:any;
@@ -66,6 +67,22 @@ export class TrendsComponent implements OnInit {
 
 
   }
+
+  searchcand(){
+    this.router.navigateByUrl('/search');
+      }
+      addcand(){
+        this.router.navigateByUrl('/addcandidate');
+      }
+      viewcand(){
+        this.router.navigateByUrl('/viewcandidate');
+      }
+      viewtrend(){
+        this.router.navigateByUrl('/viewtrends');
+      }
+
+
+
 }
 
  

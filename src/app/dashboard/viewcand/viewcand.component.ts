@@ -66,4 +66,20 @@ export class ViewcandComponent implements OnInit {
   });
   }
 
+  searchcand(){
+    this.router.navigateByUrl('/search');
+      }
+      addcand(){
+        this.router.navigateByUrl('/addcandidate');
+      }
+      viewcand(){
+        this.router.navigateByUrl('/viewcandidate');
+      }
+      viewtrend(){
+        this.router.navigateByUrl('/viewtrends');
+      }
+
+
+
+
 }
