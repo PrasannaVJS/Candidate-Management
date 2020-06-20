@@ -14,8 +14,10 @@ export class TrendsComponent implements OnInit {
   view: any[] = [600, 400];
   trends:any;
   trends2:any;
+  trends3:any;
   single;
   single2;
+  single3;
 
 
   showXAxis = true;
@@ -29,12 +31,18 @@ export class TrendsComponent implements OnInit {
   timeline = true;
   xAxisLabel2 = 'Skills';
   yAxisLabel2 = 'Number of Candidates';
+  xAxisLabel3 = 'Designation';
+  yAxisLabel3 = 'Number of Candidates';
   colorScheme = {
     domain: ['violet','blue','green','orange','yellow']
   };
 
   colorScheme2 = {
     domain: ['indigo','red','grey','pink','brown']
+  };
+
+  colorScheme3 = {
+    domain: ['blue','red','green','yellow']
   };
 
  
@@ -63,6 +71,18 @@ export class TrendsComponent implements OnInit {
         })
       }
       this.single2=data;
+    });
+
+    this.service.chartPosition().subscribe((trends3:any[])=> {
+      console.log(trends3)
+      let data:any[]=[];
+      for (let trend3 of trends3){
+        data.push({
+          "name":trend3.pos,
+          "value":trend3.poscount
+        })
+      }
+      this.single3=data;
     });
 
 

@@ -52,12 +52,12 @@
 
 
     <ul class="menu">
-      <li><a routerLink="/dashboard">Home</a></li>
-      <li><a routerLink="/others">Opportunity Management</a></li>
-      <li><a routerLink="/search">Candidate Management</a></li>
-      <li><a routerLink="/others">Course Management</a></li>
-      <li><a routerLink="/others">Assessment</a></li>
-      <li><a routerLink="/others">Onboarding Portal</a></li>
+      <li><a routerLink="/dashboard" (click)="opened=!opened">Home</a></li>
+      <li><a routerLink="/others" (click)="opened=!opened">Opportunity Management</a></li>
+      <li><a routerLink="/search" (click)="opened=!opened">Candidate Management</a></li>
+      <li><a routerLink="/others" (click)="opened=!opened">Course Management</a></li>
+      <li><a routerLink="/others" (click)="opened=!opened">Assessment</a></li>
+      <li><a routerLink="/others"(click)="opened=!opened">Onboarding Portal</a></li>
   </ul>
   </ng-sidebar>
   <div ng-sidebar-content>
@@ -101,7 +101,6 @@
              </div>
 </body>
 </html> 
-
 
   
 

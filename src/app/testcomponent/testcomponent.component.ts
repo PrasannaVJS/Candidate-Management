@@ -3,12 +3,13 @@ import { UserserviceService } from 'src/app/userservice.service';
 import { Router } from '@angular/router';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
-  selector: 'app-viewcand',
-  templateUrl: './viewcand.component.html',
-  styleUrls: ['./viewcand.component.css']
+  selector: 'app-testcomponent',
+  templateUrl: './testcomponent.component.html',
+  styleUrls: ['./testcomponent.component.css']
 })
-export class ViewcandComponent implements OnInit {
+export class TestcomponentComponent implements OnInit {
   showModal:boolean;
   Loc=["Bangalore","Mumbai","Chennai","Hyderabad","Gurugram"];
   Role=["Intern","Employee","Manager","HR"];
@@ -88,4 +89,7 @@ export class ViewcandComponent implements OnInit {
       viewtrend(){
         this.router.navigateByUrl('/viewtrends');
       }
+
+
+
 }

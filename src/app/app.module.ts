@@ -20,6 +20,7 @@ import { NgbModule,NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { SidebarModule } from 'ng-sidebar';
+import { TestcomponentComponent } from './testcomponent/testcomponent.component';
 
 
 
@@ -44,7 +45,8 @@ export function provideConfig() {
     UpdatecandComponent,
     SearchComponent,
     TrendsComponent,
-    AboutusComponent
+    AboutusComponent,
+    TestcomponentComponent
   ],
   imports: [
     BrowserModule,

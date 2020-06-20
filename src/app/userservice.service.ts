@@ -49,6 +49,8 @@ public chartSkill(){
   return this.http.get("http://localhost:8081/chartskill");
 }
 
-
+public chartPosition(){
+  return this.http.get("http://localhost:8081/chartdesignation");
+}
 
 }
